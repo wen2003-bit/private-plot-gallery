@@ -1,8 +1,20 @@
 # Codex 使用说明
 
-- 图库仓库：`wen2003-bit/private-plot-gallery`（私有）。以 `gallery-local/INDEX.md` 为检索入口；候选卡片与图片文件均在同一目录。
-- 通过已登录的 GitHub CLI/API 读取仓库。不要把整个图库克隆到工作目录；需要看图时只取当前任务相关的少数图片。
-- `gallery-local/INDEX.md` 和卡片是小文本，可用 GitHub Contents API 读取。按需取原图时，从递归 Git tree 得到文件 SHA，再读 Git blob 的 base64 内容，在内存中解码并查看。需要临时文件时只写入临时目录，用完删除。
-- 图片原始出处没有逐一核验；卡片来源记录为“个人上传”，不要推断或补写出处。
-- 不要启用公开 Pages 或把内容推送到上游开源技能仓库。
-- 网页浏览入口是本仓库主页：登录 GitHub 后可浏览 README 图册、原图和鉴赏卡。新增/替换文件后，若要更新首页目录、索引或鉴赏卡，再让 Codex 按用户要求提交相应变更。
+本仓库是 `liouhai/plot-is-all-you-need` 的完整私有副本，并额外包含用户个人图库：
+
+- `SKILL.md`：绘图 skill 入口与行为规则。
+- `stages/`：鉴赏、共鸣、演绎、品评四阶段指南。
+- `scripts/`：入库、索引、鉴赏卡和样板册工具。
+- `gallery/`：原项目自带的图库、鉴赏卡、索引及示例代码。
+- `gallery-local/`：用户私人图片、鉴赏卡和索引；仅保存在本私有仓库。
+- `PERSONAL_GALLERY.md`：可登录 GitHub 后浏览的个人图库首页。
+
+## 使用图库
+
+选图时先读 `gallery/INDEX.md` 与 `gallery-local/INDEX.md`，结合具体任务筛候选，再读取少数对应卡片和图片。若当前 Codex 环境没有本仓库的文件，不要克隆或下载整库；使用已认证的 GitHub CLI/API 读取索引、卡片及按需的少数图片。不要显示认证信息。
+
+## 私人内容边界
+
+`gallery-local/` 中的个人图片、卡片和索引只能提交到 `wen2003-bit/private-plot-gallery`。不要推送到上游 `liouhai/plot-is-all-you-need`，不要启用 GitHub Pages，也不要把个人图片复制进上游公开图库 `gallery/`。修改个人图库时，按用户请求更新对应图片、鉴赏卡、索引和 `PERSONAL_GALLERY.md`。
+
+本仓库的 `gallery/` 来自上游项目；`gallery-local/` 是用户的私人素材。新增个人图片时只更新后者。

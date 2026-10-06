@@ -1,0 +1,9 @@
+# 本机品味记录，不进入仓库
+taste.md
+
+# 可由脚本重新生成
+.cache.npz
+__pycache__/
+figures/
+gallery/*.pdf
+.DS_Store
